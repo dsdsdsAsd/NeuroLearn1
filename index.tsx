@@ -67,8 +67,8 @@ import {
 // --- CONFIGURATION: HARDCODED CREDENTIALS (OPTIONAL) ---
 // Вставьте сюда ваши данные от Supabase, чтобы они подтягивались автоматически.
 // Это удобно для деплоя, но помните, что public ключ виден в коде.
-const HARDCODED_SUPABASE_URL = ""; // Например: "https://xyz.supabase.co"
-const HARDCODED_SUPABASE_KEY = ""; // Например: "eyJhbGc..."
+const HARDCODED_SUPABASE_URL = "https://ukhjypxkiixppuoswdhi.supabase.co"; // Например: "https://xyz.supabase.co"
+const HARDCODED_SUPABASE_KEY = "sb_publishable_Ci7mGvtq8DQQBOest1dOAg_3CPi2Qha"; // Например: "eyJhbGc..."
 
 // --- INITIAL DATA (EMPTY - NO DEMO POSTS) ---
 const initialBlogPosts: any[] = [];
