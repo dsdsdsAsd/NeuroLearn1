@@ -70,6 +70,9 @@ import {
 const HARDCODED_SUPABASE_URL = "https://ukhjypxkiixppuoswdhi.supabase.co"; // Например: "https://xyz.supabase.co"
 const HARDCODED_SUPABASE_KEY = "sb_publishable_Ci7mGvtq8DQQBOest1dOAg_3CPi2Qha"; // Например: "eyJhbGc..."
 
+// Вставьте сюда API Key от Google Gemini (AI Studio), чтобы генерация работала на Vercel
+const HARDCODED_GEMINI_KEY = "AIzaSyCSxief8EvWw4FWHDm6lOPUf2tY_GmZSBA"; // Например: "AIzaSy..."
+
 // --- INITIAL DATA (EMPTY - NO DEMO POSTS) ---
 const initialBlogPosts: any[] = [];
 
@@ -410,7 +413,14 @@ const AdminDashboard = ({
     if (!aiTopic) return;
     setIsGenerating(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // USE HARDCODED KEY IF ENV IS MISSING (FOR VERCEL SUPPORT)
+      const apiKey = process.env.API_KEY || HARDCODED_GEMINI_KEY;
+      
+      if (!apiKey) {
+        throw new Error("API Key for Gemini is missing. Please set HARDCODED_GEMINI_KEY in the code.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
         contents: `Ты — профессиональный технический блогер и эксперт по AI.
@@ -457,9 +467,9 @@ const AdminDashboard = ({
       setIsEditing(true); 
       setAiTopic("");
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("AI Generation failed:", error);
-      alert("Ошибка генерации. Попробуйте еще раз.");
+      alert(`Ошибка генерации: ${error.message}`);
     } finally {
       setIsGenerating(false);
     }
