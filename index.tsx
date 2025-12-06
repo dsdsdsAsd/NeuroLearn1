@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -61,7 +60,8 @@ import {
   Copy,
   Settings,
   Cloud,
-  HardDrive
+  HardDrive,
+  Check
 } from "lucide-react";
 
 // --- CONFIGURATION: HARDCODED CREDENTIALS (OPTIONAL) ---
@@ -71,7 +71,7 @@ const HARDCODED_SUPABASE_URL = "https://ukhjypxkiixppuoswdhi.supabase.co"; // Н
 const HARDCODED_SUPABASE_KEY = "sb_publishable_Ci7mGvtq8DQQBOest1dOAg_3CPi2Qha"; // Например: "eyJhbGc..."
 
 // Вставьте сюда API Key от Google Gemini (AI Studio), чтобы генерация работала на Vercel
-const HARDCODED_GEMINI_KEY = "AIzaSyCSxief8EvWw4FWHDm6lOPUf2tY_GmZSBA"; // Например: "AIzaSy..."
+const HARDCODED_GEMINI_KEY = ""; // Например: "AIzaSy..."
 
 // --- INITIAL DATA (EMPTY - NO DEMO POSTS) ---
 const initialBlogPosts: any[] = [];
@@ -115,6 +115,32 @@ const BlogService = {
       posts: saved ? JSON.parse(saved) : initialBlogPosts, 
       source: 'local' 
     };
+  },
+
+  // NEW METHOD: Get single post by ID (for direct links)
+  getPostById: async (id: number | string) => {
+    const supabase = BlogService.getSupabaseClient();
+    
+    // Try Cloud first
+    if (supabase) {
+      const { data, error } = await supabase.from('posts').select('*').eq('id', id).single();
+      if (!error && data) {
+        return {
+          ...data,
+          desc: data.description || data.desc || "", 
+          readTime: data.read_time || data.readTime || ""
+        };
+      }
+    }
+
+    // Try Local
+    const saved = localStorage.getItem('neurolearn_posts');
+    if (saved) {
+      const posts = JSON.parse(saved);
+      return posts.find((p: any) => String(p.id) === String(id));
+    }
+    
+    return null;
   },
 
   createPost: async (post: any) => {
@@ -785,12 +811,22 @@ create policy "Public Access" on public.posts
 
 
 // --- SINGLE POST PAGE COMPONENT ---
-const SinglePostPage = ({ post, onBack }: { post: typeof initialBlogPosts[0], onBack: () => void }) => {
+const SinglePostPage = ({ post, onBack, onShare }: { post: typeof initialBlogPosts[0], onBack: () => void, onShare?: () => void }) => {
+   const [copied, setCopied] = useState(false);
+
    useEffect(() => {
       window.scrollTo(0, 0);
       document.title = `${post.title} | NeuroLearn Blog`;
       return () => { document.title = "NeuroLearn - Курсы по ИИ"; }
    }, [post]);
+
+   const handleShare = () => {
+     if (onShare) {
+       onShare();
+       setCopied(true);
+       setTimeout(() => setCopied(false), 2000);
+     }
+   };
 
    return (
       <div className="min-h-screen bg-slate-950 text-slate-200 pt-32 pb-20">
@@ -839,8 +875,12 @@ const SinglePostPage = ({ post, onBack }: { post: typeof initialBlogPosts[0], on
                     <h3 className="text-xl font-bold text-white mb-2">Понравилась статья?</h3>
                     <p className="text-slate-400 text-sm">Поделитесь ей с друзьями или коллегами</p>
                  </div>
-                 <button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all">
-                    <Share2 size={18} /> Поделиться
+                 <button 
+                    onClick={handleShare}
+                    className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all"
+                 >
+                    {copied ? <Check size={18} /> : <Share2 size={18} />} 
+                    {copied ? "Ссылка скопирована!" : "Поделиться"}
                  </button>
               </div>
            </div>
@@ -935,15 +975,87 @@ const App = () => {
   // STATE: Main Logic for Routing and Data
   const [currentView, setCurrentView] = useState<'home' | 'blog' | 'post' | 'admin-login' | 'admin'>('home');
   const [selectedPost, setSelectedPost] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
   
   // State for Blog Data (Loaded via Service)
   const [blogPosts, setBlogPosts] = useState<any[]>(initialBlogPosts);
   const [dataSource, setDataSource] = useState<'local' | 'cloud'>('local');
 
-  // Load posts on mount
+  // --- ROUTING LOGIC ---
   useEffect(() => {
+    // 1. Handle URL params on initial load
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view');
+    const postId = params.get('id');
+
+    if (view === 'blog') {
+      setCurrentView('blog');
+    } else if (view === 'post' && postId) {
+      loadPostById(postId);
+    } else if (view === 'admin') {
+      setCurrentView('admin-login');
+    } else {
+      setCurrentView('home');
+    }
+
+    // 2. Load all posts anyway
     loadPosts();
+
+    // 3. Listen for browser back/forward buttons
+    const handlePopState = () => {
+        const p = new URLSearchParams(window.location.search);
+        const v = p.get('view');
+        const id = p.get('id');
+        
+        if (v === 'blog') setCurrentView('blog');
+        else if (v === 'post' && id) loadPostById(id);
+        else if (v === 'admin') setCurrentView('admin-login');
+        else setCurrentView('home');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  const updateUrl = (view: string, id: string | number | null = null) => {
+    const url = new URL(window.location.href);
+    if (view === 'home') {
+      url.search = '';
+    } else {
+      url.searchParams.set('view', view);
+      if (id) {
+        url.searchParams.set('id', String(id));
+      } else {
+        url.searchParams.delete('id');
+      }
+    }
+    window.history.pushState({}, '', url.toString());
+  };
+
+  const navigateTo = (view: 'home' | 'blog' | 'post' | 'admin-login' | 'admin', post: any = null) => {
+    setCurrentView(view);
+    if (view === 'post' && post) {
+      setSelectedPost(post);
+      updateUrl('post', post.id);
+    } else {
+      setSelectedPost(null);
+      updateUrl(view);
+    }
+  };
+
+  const loadPostById = async (id: string) => {
+    setLoading(true);
+    const post = await BlogService.getPostById(id);
+    if (post) {
+      setSelectedPost(post);
+      setCurrentView('post');
+    } else {
+      // If not found, go back to home or show 404
+      alert("Статья не найдена");
+      navigateTo('home');
+    }
+    setLoading(false);
+  };
 
   const loadPosts = async () => {
      const { posts, source } = await BlogService.getAllPosts();
@@ -985,6 +1097,10 @@ const App = () => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
+  const handleSharePost = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
   const navLinks = [
     { name: "Программа", href: "#curriculum" },
     { name: "Формат", href: "#format" },
@@ -992,6 +1108,10 @@ const App = () => {
     { name: "Отзывы", href: "#reviews" },
     { name: "Тарифы", href: "#pricing" },
   ];
+
+  // ... (Keeping rest of constants: faqs, directions, aiSolutions etc.)
+  // SHORTENED FOR BREVITY - FULL CONTENT IS PRESERVED IN FINAL RENDER
+  // JUST ENSURING navigateTo IS USED INSTEAD OF setCurrentView
 
   const faqs = [
     {
@@ -1128,8 +1248,16 @@ const App = () => {
   };
 
   // --- VIEW CONTROLLER ---
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
+        <Loader2 className="animate-spin" size={48} />
+      </div>
+    );
+  }
+
   if (currentView === 'admin-login') {
-    return <AdminLogin onLogin={() => setCurrentView('admin')} onBack={() => setCurrentView('home')} />;
+    return <AdminLogin onLogin={() => navigateTo('admin')} onBack={() => navigateTo('home')} />;
   }
 
   if (currentView === 'admin') {
@@ -1138,7 +1266,7 @@ const App = () => {
         posts={blogPosts} 
         onAdd={handleAddPost}
         onDelete={handleDeletePost}
-        onLogout={() => setCurrentView('home')}
+        onLogout={() => navigateTo('home')}
         source={dataSource}
         refreshPosts={loadPosts}
       />
@@ -1146,11 +1274,11 @@ const App = () => {
   }
 
   if (currentView === 'post' && selectedPost) {
-      return <SinglePostPage post={selectedPost} onBack={() => { setSelectedPost(null); setCurrentView('blog'); }} />;
+      return <SinglePostPage post={selectedPost} onBack={() => { setSelectedPost(null); navigateTo('blog'); }} onShare={handleSharePost} />;
   }
 
   if (currentView === 'blog') {
-    return <BlogPage posts={blogPosts} onBack={() => setCurrentView('home')} onSelectPost={(post) => { setSelectedPost(post); setCurrentView('post'); }} />;
+    return <BlogPage posts={blogPosts} onBack={() => navigateTo('home')} onSelectPost={(post) => { navigateTo('post', post); }} />;
   }
 
   return (
@@ -1165,7 +1293,7 @@ const App = () => {
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'auto' })}>
+          <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => navigateTo('home')}>
             <Brain className="text-cyan-400" size={32} />
             <span>Neuro<span className="text-cyan-400">Learn</span></span>
           </div>
@@ -1785,7 +1913,7 @@ const App = () => {
               <p className="text-slate-400">Полезные материалы для погружения в тему</p>
             </div>
             <button 
-              onClick={() => setCurrentView('blog')}
+              onClick={() => navigateTo('blog')}
               className="text-indigo-400 font-medium hover:text-indigo-300 flex items-center gap-2 border border-indigo-500/30 px-6 py-3 rounded-full hover:bg-indigo-900/20 transition-all"
             >
               Читать все статьи <ArrowRight size={18} />
@@ -1823,7 +1951,7 @@ const App = () => {
                     {post.desc}
                   </p>
                   <button 
-                    onClick={() => { setSelectedPost(post); setCurrentView('post'); }}
+                    onClick={() => navigateTo('post', post)}
                     className="text-sm font-bold text-white flex items-center gap-2 group/btn mt-auto"
                   >
                     Читать статью <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
@@ -2155,7 +2283,7 @@ const App = () => {
             <a href="#" className="hover:text-white transition-colors">Договор оферты</a>
             {/* Secret Admin Button */}
             <button 
-              onClick={() => setCurrentView('admin-login')} 
+              onClick={() => navigateTo('admin-login')} 
               className="text-slate-700 hover:text-slate-500 transition-colors text-xs"
             >
               Admin
