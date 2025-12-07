@@ -71,7 +71,7 @@ const HARDCODED_SUPABASE_URL = "https://ukhjypxkiixppuoswdhi.supabase.co"; // Н
 const HARDCODED_SUPABASE_KEY = "sb_publishable_Ci7mGvtq8DQQBOest1dOAg_3CPi2Qha"; // Например: "eyJhbGc..."
 
 // Вставьте сюда API Key от Google Gemini (AI Studio), чтобы генерация работала на Vercel
-const HARDCODED_GEMINI_KEY = ""; // Например: "AIzaSy..."
+const HARDCODED_GEMINI_KEY = "AIzaSyCSxief8EvWw4FWHDm6lOPUf2tY_GmZSBA"; // Например: "AIzaSy..."
 
 // --- INITIAL DATA (EMPTY - NO DEMO POSTS) ---
 const initialBlogPosts: any[] = [];
