@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "auth": {
+    "type": "github_app",
+    "permissions": {
+      "contents": "write",
+      "pull_requests": "write"
+    }
+  },
+  "allowed_origins": [
+    "https://geminicli.com"
+  ]
+}
