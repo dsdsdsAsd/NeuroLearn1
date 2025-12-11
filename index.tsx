@@ -1353,7 +1353,7 @@ const App = () => {
               </a>
             ))}
             <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-6 py-2.5 rounded-full font-bold transition-all shadow-[0_4px_14px_rgba(6,182,212,0.3)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.4)]">
-              Войти
+              Консультация
             </button>
           </div>
 
@@ -1377,7 +1377,7 @@ const App = () => {
               </a>
             ))}
             <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 w-full py-3 rounded-lg font-bold mt-2">
-              Войти
+              Консультация
             </button>
           </div>
         )}
