@@ -1349,21 +1349,25 @@ const App = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              Будущее с <br />
-              Искусственным Интеллектом
+              От Идеи до AI-Продукта: <br />
+              Станьте Архитектором Будущего
             </h1>
             
             <p className="text-base md:text-lg text-slate-400 max-w-xl leading-relaxed">
-              Освойте Machine Learning, Deep Learning и создание нейросетей с нуля до уровня PRO за 6 месяцев. Практика на реальных проектах.
+              Освойте сквозную разработку AI-систем: от проектирования до внедрения. Создавайте инновации, решайте реальные задачи и стройте успешную карьеру в AI.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-cyan-500 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-cyan-400 transition-colors shadow-[0_4px_14px_rgba(6,182,212,0.3)] flex items-center justify-center gap-2">
-                Начать обучение <ChevronRight size={20} />
-              </button>
-              <button className="px-8 py-4 rounded-full font-medium text-slate-300 border border-slate-700 hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center justify-center gap-2">
-                <Play size={18} className="fill-current" /> Демо-урок
-              </button>
+              <a href="#pricing">
+                <button className="bg-cyan-500 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-cyan-400 transition-colors shadow-[0_4px_14px_rgba(6,182,212,0.3)] flex items-center justify-center gap-2">
+                  Начать обучение <ChevronRight size={20} />
+                </button>
+              </a>
+              <a href="https://www.youtube.com/watch?v=YPGs6Hxz1rI" target="_blank" rel="noopener noreferrer">
+                <button className="px-8 py-4 rounded-full font-medium text-slate-300 border border-slate-700 hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center justify-center gap-2">
+                  <Play size={18} className="fill-current" /> Демо-урок
+                </button>
+              </a>
             </div>
 
             <div className="flex items-center gap-4 pt-4">
