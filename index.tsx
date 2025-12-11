@@ -1907,8 +1907,8 @@ const App = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Обо мне</h2>
-             <p className="text-slate-400">Познакомьтесь с вашим наставником</p>
+             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Ваш наставник</h2>
+             <p className="text-slate-400">Создатель курса и ваш личный AI-архитектор</p>
           </div>
 
           <div className="glass-card bg-slate-800/30 rounded-3xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row gap-12 items-center shadow-lg">
@@ -1926,15 +1926,17 @@ const App = () => {
                 Ваш наставник
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Alexandr Gavrilov</h2>
-              <p className="text-xl text-cyan-400 mb-6">Senior AI Engineer & Tech Lead</p>
+              <p className="text-xl text-cyan-400 mb-6">Архитектор AI-Систем / Full-Stack AI-разработчик</p>
               
               <div className="space-y-4 text-slate-300 mb-8 leading-relaxed">
                 <p>
-                  Более 10 лет в разработке, из них 6 лет специализируюсь на ML и AI. Работал в ведущих тех-гигантах (Yandex, Silicon Valley startups).
+                  Я — инженер-практик, который верит, что AI — это не магия, а мощный инструмент для решения реальных задач. Моя цель — не просто обучать модели, а строить полноценные, работающие системы, которые приносят измеримую пользу.
                 </p>
                 <p>
-                  Автор популярных Open Source библиотек по NLP. Спикер конференций HighLoad и DataFest.
-                  Обучил более 500 студентов, которые сейчас работают в Sber, Tinkoff и зарубежных стартапах.
+                  Специализируюсь на создании комплексных решений, объединяя Computer Vision, работу с языковыми моделями (LLM, RAG) и разработку бэкенда (Python, API). В моем портфолио — проекты от анализа данных с дронов до создания автономных AI-агентов.
+                </p>
+                <p>
+                  Я создал этот курс, чтобы делиться практическим опытом и учить системному подходу. Моя задача — помочь вам научиться не просто следовать инструкциям, а самостоятельно превращать любые идеи в работающие AI-продукты.
                 </p>
               </div>
 
