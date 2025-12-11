@@ -965,12 +965,59 @@ const BlogPage = ({ posts, onBack, onSelectPost }: { posts: typeof initialBlogPo
   );
 };
 
+const VideoModal = ({ videoSrc, onClose }) => {
+  useEffect(() => {
+    // Disable body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [onClose]);
+
+  return (
+    <div 
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-slate-700"
+        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the video container
+      >
+        <button 
+          onClick={onClose}
+          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-white/20 transition-all"
+        >
+          <X size={24} />
+        </button>
+        <div style={{position: 'relative', paddingTop: '56.25%', width: '100%'}}>
+          <iframe 
+            src={videoSrc} 
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media;" 
+            frameBorder="0" 
+            allowFullScreen 
+            style={{position: 'absolute', width: '100%', height: '100%', top: 0, left: 0}}
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [currentSolutionIndex, setCurrentSolutionIndex] = useState(0);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   
   // STATE: Main Logic for Routing and Data
   const [currentView, setCurrentView] = useState<'home' | 'blog' | 'post' | 'admin-login' | 'admin'>('home');
@@ -1363,11 +1410,9 @@ const App = () => {
                   Начать обучение <ChevronRight size={20} />
                 </button>
               </a>
-              <a href="https://www.youtube.com/watch?v=YPGs6Hxz1rI" target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 rounded-full font-medium text-slate-300 border border-slate-700 hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center justify-center gap-2">
-                  <Play size={18} className="fill-current" /> Демо-урок
-                </button>
-              </a>
+              <button onClick={() => setIsDemoModalOpen(true)} className="px-8 py-4 rounded-full font-medium text-slate-300 border border-slate-700 hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center justify-center gap-2">
+                <Play size={18} className="fill-current" /> Демо-урок
+              </button>
             </div>
 
             <div className="flex items-center gap-4 pt-4">
@@ -2295,6 +2340,8 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      {isDemoModalOpen && <VideoModal videoSrc="https://kinescope.io/embed/v2LnV421115e1VfdQxMJ59" onClose={() => setIsDemoModalOpen(false)} />}
     </div>
   );
 };
