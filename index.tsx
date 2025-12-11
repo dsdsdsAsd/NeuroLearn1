@@ -1349,12 +1349,12 @@ const App = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              От Идеи до AI-Продукта: <br />
-              Станьте Архитектором Будущего
+              Будущее с <br />
+              Искусственным Интеллектом
             </h1>
             
             <p className="text-base md:text-lg text-slate-400 max-w-xl leading-relaxed">
-              Освойте сквозную разработку AI-систем: от проектирования до внедрения. Создавайте инновации, решайте реальные задачи и стройте успешную карьеру в AI.
+              Освойте разработку AI-систем: от проектирования до внедрения. Создавайте инновации, решайте реальные задачи и стройте успешную карьеру в AI.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
