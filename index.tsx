@@ -1813,7 +1813,7 @@ const App = () => {
                const style = colors[item.color];
 
                return (
-                <div key={i} className="group flex flex-col items-center text-center p-6">
+                <div key={i} className="group flex flex-col items-start text-left p-6">
                   <div className="mb-6 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     {/* Background Glow */}
                     <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full blur-lg opacity-20 ${style.glow}`}></div>
