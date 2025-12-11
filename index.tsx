@@ -1571,7 +1571,7 @@ const App = () => {
              <p className="text-slate-400 max-w-lg">
                Изучайте самые востребованные технологии AI-индустрии в формате 3D-погружения.
              </p>
-             <button className="hidden md:flex items-center gap-2 text-slate-300 bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-full transition-colors border border-slate-700 shadow-sm mt-8">
+             <button className="hidden items-center gap-2 text-slate-300 bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-full transition-colors border border-slate-700 shadow-sm mt-8">
                Все направления <ArrowRight size={18} />
              </button>
            </div>
@@ -1622,9 +1622,7 @@ const App = () => {
               <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Программа обучения</h2>
               <p className="text-slate-400">Пошаговый путь от новичка до AI Expert</p>
             </div>
-            <button className="text-indigo-400 font-medium hover:text-indigo-300 flex items-center gap-2">
-              Скачать полную программу <ChevronRight size={16} />
-            </button>
+            
           </div>
 
           <div className="space-y-6">
