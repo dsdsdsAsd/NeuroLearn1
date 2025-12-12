@@ -1338,7 +1338,7 @@ const App = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 hidden ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => navigateTo('home')}>
             <Brain className="text-cyan-400" size={32} />
@@ -1452,9 +1452,9 @@ const App = () => {
       <section className="py-12 border-y border-slate-800 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "Часов контента", val: "10+" },
+            { label: "Часов контента", val: "120+" },
             { label: "Практических задач", val: "50+" },
-            { label: "Проектов в портфолио", val: "4" },
+            { label: "Проектов в портфолио", val: "1" },
             { label: "Менторская поддержка", val: "24/7" },
           ].map((stat, idx) => (
             <div key={idx}>
