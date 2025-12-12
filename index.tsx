@@ -1284,25 +1284,22 @@ const App = () => {
       icon: <Bot size={24} />
     },
     {
-      title: "Новый Кейс #2",
-      category: "Категория",
-      desc: "Скоро здесь будет описание нового проекта...",
-      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
-      icon: <Blocks size={24} />
+      image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
+      icon: <Users size={24} />
     },
     {
-      title: "Новый Кейс #3",
-      category: "Категория",
-      desc: "Скоро здесь будет описание нового проекта...",
+      title: "ИИ-Аналитик для ваших Таблиц",
+      category: "Data Analysis / AI-Ассистенты",
+      desc: "Загрузите любой Excel/CSV файл, и AI-агент ответит на ваши вопросы по данным, построит графики и найдет инсайты.",
       image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
-      icon: <Blocks size={24} />
+      icon: <LineChart size={24} />
     },
     {
-      title: "Новый Кейс #4",
-      category: "Категория",
-      desc: "Скоро здесь будет описание нового проекта...",
+      title: "Рекламный Ролик для Ауди",
+      category: "Generative AI / Marketing",
+      desc: "Пример создания рекламы с помощью ИИ.",
       image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
-      icon: <Blocks size={24} />
+      icon: <Megaphone size={24} />
     }
   ];
 
