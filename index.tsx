@@ -2287,24 +2287,21 @@ const App = () => {
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px] opacity-20"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] opacity-20"></div>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Готовы изменить свою карьеру?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Остались вопросы?</h2>
             <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-              Первый шаг — самый важный. Запишитесь на бесплатный вводный урок и узнайте, подходит ли вам эта сфера.
+              Обсудим ваш проект и цели на бесплатной консультации.
             </p>
 
-            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-              <input 
-                type="email" 
-                placeholder="Ваш email" 
-                className="flex-1 bg-slate-900/50 border border-slate-600 rounded-full px-6 py-4 text-white focus:outline-none focus:border-cyan-500 transition-colors"
-              />
+            <a
+              href={`https://t.me/itbezcoda_dev?text=${encodeURIComponent("Здравствуйте, хочу записаться на бесплатную консультацию.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mx-auto"
+            >
               <button className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-indigo-500/30 transition-all">
                 Записаться
               </button>
-            </form>
-            <p className="text-xs text-slate-500 mt-6">
-              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-            </p>
+            </a>
           </div>
         </div>
       </section>
