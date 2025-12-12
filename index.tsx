@@ -1452,7 +1452,7 @@ const App = () => {
       <section className="py-12 border-y border-slate-800 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "Часов контента", val: "120+" },
+            { label: "Часов контента", val: "12+" },
             { label: "Практических задач", val: "50+" },
             { label: "Проектов в портфолио", val: "1" },
             { label: "Менторская поддержка", val: "24/7" },
