@@ -1338,7 +1338,7 @@ const App = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 hidden ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => navigateTo('home')}>
             <Brain className="text-cyan-400" size={32} />
@@ -1352,9 +1352,11 @@ const App = () => {
                 {link.name}
               </a>
             ))}
-            <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-6 py-2.5 rounded-full font-bold transition-all shadow-[0_4px_14px_rgba(6,182,212,0.3)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.4)]">
-              Консультация
-            </button>
+            <a href={`https://t.me/itbezcoda_dev?text=${encodeURIComponent("Здравствуйте, хочу записаться на бесплатную консультацию.")}`} target="_blank" rel="noopener noreferrer">
+              <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-6 py-2.5 rounded-full font-bold transition-all shadow-[0_4px_14px_rgba(6,182,212,0.3)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.4)]">
+                Консультация
+              </button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -1376,9 +1378,11 @@ const App = () => {
                 {link.name}
               </a>
             ))}
-            <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 w-full py-3 rounded-lg font-bold mt-2">
-              Консультация
-            </button>
+            <a href={`https://t.me/itbezcoda_dev?text=${encodeURIComponent("Здравствуйте, хочу записаться на бесплатную консультацию.")}`} target="_blank" rel="noopener noreferrer" className="w-full">
+              <button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 w-full py-3 rounded-lg font-bold mt-2">
+                Консультация
+              </button>
+            </a>
           </div>
         )}
       </nav>
@@ -1448,7 +1452,7 @@ const App = () => {
       <section className="py-12 border-y border-slate-800 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "Часов контента", val: "120+" },
+            { label: "Часов контента", val: "10+" },
             { label: "Практических задач", val: "50+" },
             { label: "Проектов в портфолио", val: "4" },
             { label: "Менторская поддержка", val: "24/7" },
@@ -2306,70 +2310,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-950 py-12 border-t border-slate-800 text-slate-400 text-sm">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <div className="flex items-center gap-2 font-bold text-xl text-white mb-4">
-              <Brain className="text-cyan-400" size={24} />
-              <span>Neuro<span className="text-cyan-400">Learn</span></span>
-            </div>
-            <p className="mb-4">Образовательная платформа нового поколения для тех, кто хочет быть на острие технологий.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-white mb-4">Курсы</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Python для начинающих</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Data Science</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Machine Learning</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Deep Learning</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-white mb-4">Компания</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">О нас</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Преподаватели</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Отзывы</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Блог</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Контакты</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-white mb-4">Контакты</h4>
-            <ul className="space-y-2">
-              <li>hello@neurolearn.academy</li>
-              <li>+7 (999) 123-45-67</li>
-              <li>Москва, ул. Технологов, 42</li>
-            </ul>
-            <div className="flex gap-4 mt-6">
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-cyan-500 hover:text-slate-900 transition-all">
-                <Linkedin size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-cyan-500 hover:text-slate-900 transition-all">
-                <Github size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-cyan-500 hover:text-slate-900 transition-all">
-                <Video size={16} />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; 2024 NeuroLearn Academy. Все права защищены.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="hover:text-white transition-colors">Договор оферты</a>
-            {/* Secret Admin Button */}
-            <button 
-              onClick={() => navigateTo('admin-login')} 
-              className="text-slate-700 hover:text-slate-500 transition-colors text-xs"
-            >
-              Admin
-            </button>
-          </div>
-        </div>
-      </footer>
+      
 
       {isDemoModalOpen && <VideoModal videoSrc="https://kinescope.io/embed/v2LnV421115e1VfdQxMJ59" onClose={() => setIsDemoModalOpen(false)} />}
     </div>
