@@ -2131,7 +2131,7 @@ const App = () => {
                 
                 <div className="mb-8">
                   <div className="text-4xl font-bold text-white mb-1">49 900 ₽</div>
-                  <div className="text-sm text-slate-500">или от 4 158 ₽/мес</div>
+
                 </div>
 
                 <div className="space-y-4 flex-grow">
@@ -2139,7 +2139,7 @@ const App = () => {
                     "Полный доступ к урокам (навсегда)",
                     "Доступ в закрытое комьюнити",
                     "Практические задания (авто-проверка)",
-                    "Сертификат о прохождении"
+
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
                       <CheckCircle size={18} className="text-slate-500 flex-shrink-0" />
@@ -2191,7 +2191,7 @@ const App = () => {
                     
                     <div className="mb-8">
                       <div className="text-4xl font-bold text-white mb-1">99 900 ₽</div>
-                      <div className="text-sm text-cyan-500/80">или от 8 325 ₽/мес</div>
+    
                     </div>
 
                     <div className="space-y-4 flex-grow">
@@ -2199,7 +2199,7 @@ const App = () => {
                         "Все из тарифа 'Исследователь'",
                         "Личная проверка ДЗ и код-ревью",
                         "Еженедельные воркшопы (Q&A)",
-                        "Помощь с дипломным проектом"
+                        "Помощь в реализации вашего проекта"
                       ].map((feat, i) => (
                         <div key={i} className="flex gap-3 text-slate-200 text-sm font-medium">
                           <CheckCircle size={18} className="text-cyan-400 flex-shrink-0" />
@@ -2245,7 +2245,7 @@ const App = () => {
                 
                 <div className="mb-8">
                   <div className="text-4xl font-bold text-white mb-1">249 900 ₽</div>
-                  <div className="text-sm text-indigo-500/80">или от 20 825 ₽/мес</div>
+
                 </div>
 
                 <div className="space-y-4 flex-grow">
@@ -2253,7 +2253,7 @@ const App = () => {
                     "Все из тарифа 'Практик'",
                     "4 индивидуальные страт-сессии",
                     "Разработка архитектуры MVP",
-                    "Карьерная консультация",
+                    "Применение корпоративных стандартов и методологий",
                     "Приоритетная поддержка"
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
