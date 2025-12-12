@@ -1179,7 +1179,7 @@ const App = () => {
     },
     {
       question: "Поможете ли вы с поиском работы?",
-      answer: "Мы делаем лучше. Мы не \"помогаем с поиском\", мы создаем ситуацию, когда работа находит вас сама. К концу курса у вас будет портфолио из 1 реального, сложного AI-проекта. Это ваше главное преимущество, которое заставит рекрутеров и клиентов самих писать вам. На тарифе \"Архитектор\" мы также проводим карьерную консультацию и готовим к собеседованиям."
+      answer: "Мы делаем лучше. Мы не \"помогаем с поиском\", мы создаем ситуацию, когда работа находит вас сама. К концу курса у вас будет портфолио из 1 реального, сложного AI-проекта. Это ваше главное преимущество, которое заставит рекрутеров и клиентов самих писать вам."
     },
     {
       question: "Я получу сертификат?",
@@ -1392,7 +1392,7 @@ const App = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
-              Старт нового потока: 15 Октября
+              Старт: Декабрь / Январь
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
@@ -1424,8 +1424,8 @@ const App = () => {
                 ))}
               </div>
               <div>
-                <p className="font-bold text-white">1,200+ студентов</p>
-                <p className="text-sm text-slate-400">уже работают в IT</p>
+                <p className="font-bold text-white">Более 50-ти</p>
+                <p className="text-sm text-slate-400">успешных кейсов и учеников</p>
               </div>
             </div>
           </div>
@@ -1627,14 +1627,14 @@ const App = () => {
 
           <div className="space-y-6">
             {[
-              { num: "01", title: "Введение в AI Мышление", hours: "1 неделя", topics: ["Промпт-инжиниринг", "Стратегия внедрения", "Обзор инструментов"] },
-              { num: "02", title: "Low-code / No-code Автоматизация", hours: "2 недели", topics: ["n8n & Make", "Интеграции API", "Автоматизация процессов"] },
-              { num: "03", title: "Архитектура LLM и RAG решений", hours: "3 недели", topics: ["LangChain", "Векторные базы", "Embeddings", "Семантический поиск"] },
-              { num: "04", title: "Разговорный AI", hours: "2 недели", topics: ["TTS & STT", "Голосовые ассистенты", "OpenAI Realtime API"] },
-              { num: "05", title: "Machine Learning и Computer Vision", hours: "5 недель", topics: ["Scikit-learn", "YOLO", "OpenCV", "Предиктивная аналитика", "Работа с данными"] },
-              { num: "06", title: "Fullstack разработка", hours: "4 недели", topics: ["React", "FastAPI", "Интеграция AI", "Деплой"] },
-              { num: "07", title: "Контент Маркетинг", hours: "2 недели", topics: ["AI-генерация", "Автопостинг", "SMM стратегии"] },
-              { num: "08", title: "Финальный проект", hours: "3 недели", topics: ["Разработка MVP", "Упаковка кейса", "Запуск продукта"] },
+              { num: "01", title: "Введение в AI Мышление", hours: "3 дня", topics: ["Промпт-инжиниринг", "Стратегия внедрения", "Обзор инструментов"] },
+              { num: "02", title: "Low-code / No-code Автоматизация", hours: "3 дня", topics: ["n8n & Make", "Интеграции API", "Автоматизация процессов"] },
+              { num: "03", title: "Архитектура LLM и RAG решений", hours: "3 дня", topics: ["LangChain", "Векторные базы", "Embeddings", "Семантический поиск"] },
+              { num: "04", title: "Разговорный AI", hours: "3 дня", topics: ["TTS & STT", "Голосовые ассистенты", "OpenAI Realtime API"] },
+              { num: "05", title: "Machine Learning и Computer Vision", hours: "3 дня", topics: ["Scikit-learn", "YOLO", "OpenCV", "Предиктивная аналитика", "Работа с данными"] },
+              { num: "06", title: "Fullstack разработка", hours: "3 дня", topics: ["React", "FastAPI", "Интеграция AI", "Деплой"] },
+              { num: "07", title: "Контент Маркетинг", hours: "3 дня", topics: ["AI-генерация", "Автопостинг", "SMM стратегии"] },
+              { num: "08", title: "Финальный проект", hours: "3 дня", topics: ["Разработка MVP", "Упаковка кейса", "Запуск продукта"] },
             ].map((module, idx) => (
               <div key={idx} className="group glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center bg-slate-800/50">
                 <div className="text-4xl font-bold text-slate-700 group-hover:text-cyan-400 transition-colors">{module.num}</div>
@@ -2148,9 +2148,22 @@ const App = () => {
                   ))}
                 </div>
 
-                <button className="w-full py-4 rounded-xl border border-slate-600 text-white font-bold hover:bg-slate-700 hover:border-slate-500 transition-all mt-8">
-                  Выбрать 'Исследователя'
-                </button>
+                <a 
+                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Исследователь'."
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                                  <a 
+                                    href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Исследователь'."
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="w-full"
+                                  >
+                                    <button className="w-full py-4 rounded-xl border border-slate-600 text-white font-bold hover:bg-slate-700 hover:border-slate-500 transition-all mt-8">
+                                      Выбрать 'Исследователя'
+                                    </button>
+                                  </a>                </a>
               </div>
             </div>
 
@@ -2195,9 +2208,22 @@ const App = () => {
                       ))}
                     </div>
 
-                    <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25 transition-all mt-8">
-                      Выбрать 'Практика'
-                    </button>
+                    <a 
+                      href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Практик'."
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                                          <a 
+                                            href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Практик'."
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="w-full"
+                                          >
+                                            <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25 transition-all mt-8">
+                                              Выбрать 'Практика'
+                                            </button>
+                                          </a>                    </a>
                  </div>
                </div>
             </div>
@@ -2237,9 +2263,16 @@ const App = () => {
                   ))}
                 </div>
 
-                <button className="w-full py-4 rounded-xl border border-indigo-500/50 text-indigo-300 font-bold hover:bg-indigo-900/30 hover:text-indigo-200 transition-all mt-8">
-                  Оставить заявку
-                </button>
+                <a 
+                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Архитектор'."
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <button className="w-full py-4 rounded-xl border border-indigo-500/50 text-indigo-300 font-bold hover:bg-indigo-900/30 hover:text-indigo-200 transition-all mt-8">
+                    Оставить заявку
+                  </button>
+                </a>
               </div>
             </div>
           </div>
