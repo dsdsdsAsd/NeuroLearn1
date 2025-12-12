@@ -1263,11 +1263,11 @@ const App = () => {
       icon: <Bot size={24} />
     },
     {
-      title: "Smart Video Analytics",
-      category: "Computer Vision",
-      desc: "Контроль безопасности и подсчет трафика в реальном времени.",
+      title: "AI-Агроном",
+      category: "Computer Vision / AgriTech",
+      desc: "Анализ растений по видео с дронов.",
       image: "https://img.youtube.com/vi/qeC-wwgOon4/maxresdefault.jpg",
-      icon: <Scan size={24} />
+      icon: <Sprout size={24} />
     },
     {
       title: "AI Content Factory",
@@ -1275,6 +1275,34 @@ const App = () => {
       desc: "Генерация SEO-статей и постов под бренд.",
       image: "https://img.youtube.com/vi/Lh8Ghj5ftCQ/maxresdefault.jpg",
       icon: <PenTool size={24} />
+    },
+    {
+      title: "Голосовой AI-агент",
+      category: "Voice AI / CRM",
+      desc: "Автоматический прием заказов и передача лидов в CRM-систему.",
+      image: "https://img.youtube.com/vi/8QXeMnMvfdI/maxresdefault.jpg",
+      icon: <Bot size={24} />
+    },
+    {
+      title: "Новый Кейс #2",
+      category: "Категория",
+      desc: "Скоро здесь будет описание нового проекта...",
+      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      icon: <Blocks size={24} />
+    },
+    {
+      title: "Новый Кейс #3",
+      category: "Категория",
+      desc: "Скоро здесь будет описание нового проекта...",
+      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      icon: <Blocks size={24} />
+    },
+    {
+      title: "Новый Кейс #4",
+      category: "Категория",
+      desc: "Скоро здесь будет описание нового проекта...",
+      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      icon: <Blocks size={24} />
     }
   ];
 
