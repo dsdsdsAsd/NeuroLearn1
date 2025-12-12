@@ -1270,9 +1270,9 @@ const App = () => {
       icon: <Sprout size={24} />
     },
     {
-      title: "AI Content Factory",
-      category: "Marketing Automation",
-      desc: "Генерация SEO-статей и постов под бренд.",
+      title: "AI Контент-Завод",
+      category: "Generative AI / MLOps",
+      desc: "Генерация статей (DeepSeek) и обложек (Flux) для маркетинга.",
       image: "https://img.youtube.com/vi/Lh8Ghj5ftCQ/maxresdefault.jpg",
       icon: <PenTool size={24} />
     },
@@ -1290,7 +1290,7 @@ const App = () => {
     {
       title: "ИИ-Аналитик для ваших Таблиц",
       category: "Data Analysis / AI-Ассистенты",
-      desc: "Загрузите любой Excel/CSV файл, и AI-агент ответит на ваши вопросы по данным, построит графики и найдет инсайты.",
+      desc: "AI-агент для анализа Excel/CSV: вопросы, графики, инсайты.",
       image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
       icon: <LineChart size={24} />
     },
@@ -1298,7 +1298,7 @@ const App = () => {
       title: "Рекламный Ролик для Ауди",
       category: "Generative AI / Marketing",
       desc: "Пример создания рекламы с помощью ИИ.",
-      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      image: "https://img.youtube.com/vi/f_QdWPlsN3o/maxresdefault.jpg",
       icon: <Megaphone size={24} />
     }
   ];
