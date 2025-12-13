@@ -1018,6 +1018,55 @@ const App = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [currentSolutionIndex, setCurrentSolutionIndex] = useState(0);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
+  // Yandex Metrika Delayed Direct Injection (Final Attempt)
+  useEffect(() => {
+    // We wrap the whole thing in a timeout to ensure it runs after the initial render.
+    const timer = setTimeout(() => {
+      const YM_COUNTER_ID = 105825624;
+      if (typeof window === 'undefined') return;
+
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          // @ts-ignore
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document, "script", `https://mc.yandex.ru/metrika/tag.js`, "ym");
+
+      // @ts-ignore
+      if(typeof window.ym === 'function') {
+        // @ts-ignore
+        window.ym(YM_COUNTER_ID, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            trackHash:true
+        });
+      }
+    }, 1500); // Increased delay for absolute safety
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+
+  }, []); // Empty array means this runs only once.
+
+  // SPA Hit Tracker for Metrika
+  useEffect(() => {
+    const YM_COUNTER_ID = 105825624;
+    const url = window.location.pathname + window.location.search;
+    
+    // We also delay this slightly to ensure the ym object is initialized
+    const hitTimer = setTimeout(() => {
+      // @ts-ignore
+      if (typeof window.ym === 'function') {
+        // @ts-ignore
+        window.ym(YM_COUNTER_ID, 'hit', url, { title: document.title });
+      }
+    }, 1600); // Runs just after init
+
+    return () => clearTimeout(hitTimer);
+
+  }, [currentView, selectedPost]);
   
   // STATE: Main Logic for Routing and Data
   const [currentView, setCurrentView] = useState<'home' | 'blog' | 'post' | 'admin-login' | 'admin'>('home');
