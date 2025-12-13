@@ -1280,14 +1280,14 @@ const App = () => {
       title: "Голосовой AI-агент",
       category: "Voice AI / CRM",
       desc: "Автоматический прием заказов и передача лидов в CRM-систему.",
-      image: "https://img.youtube.com/vi/8QXeMnMvfdI/maxresdefault.jpg",
+      image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
       icon: <Bot size={24} />
     },
     {
       title: "Нейроэксперт с Memory и RAG",
       category: "AI-Ассистенты / RAG",
       desc: "AI-ассистент, способный вести осмысленный диалог, запоминать контекст и отвечать на вопросы, используя обширную базу знаний.",
-      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      image: "https://img.youtube.com/vi/8QXeMnMvfdI/maxresdefault.jpg",
       icon: <Brain size={24} />
     },
     {
