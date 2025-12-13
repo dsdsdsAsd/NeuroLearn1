@@ -1294,7 +1294,7 @@ const App = () => {
       title: "ИИ-Аналитик для ваших Таблиц",
       category: "Data Analysis / AI-Ассистенты",
       desc: "AI-агент для анализа Excel/CSV: вопросы, графики, инсайты.",
-      image: "https://i.ibb.co/CKK0M5cs/Untitled-5.png",
+      image: "https://img.youtube.com/vi/kD0bIszrpQ0/maxresdefault.jpg",
       icon: <LineChart size={24} />
     },
     {
