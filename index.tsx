@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { inject } from '@vercel/analytics'; // Vercel Analytics
 import { createRoot } from "react-dom/client";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
@@ -2393,6 +2394,9 @@ const App = () => {
     </div>
   );
 };
+
+// Vercel Analytics Initialization
+inject(); 
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
