@@ -1016,7 +1016,7 @@ const VideoModal = ({ videoSrc, onClose }) => {
 const App = () => {
   useEffect(() => {
     // This runs only on the client side, after the component mounts
-    inject();
+    // inject();
   }, []); // The empty dependency array ensures it runs only once
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
