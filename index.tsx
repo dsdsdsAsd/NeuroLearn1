@@ -2085,7 +2085,7 @@ const App = () => {
               </div>
 
               <a 
-                href="https://kwork.ru" 
+                href="https://kwork.ru/user/alexandr15_02" 
                 target="_blank" 
                 rel="noreferrer"
                 className="bg-[#86c232] hover:bg-[#618b25] text-slate-900 px-6 py-2.5 rounded-full font-bold text-base transition-all shadow-[0_4px_14px_rgba(134,194,50,0.3)] flex items-center gap-2 hover:scale-105 transform duration-200"
