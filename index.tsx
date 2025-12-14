@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { inject } from '@vercel/analytics'; // Vercel Analytics
 import { createRoot } from "react-dom/client";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
+import { YMInitializer } from 'react-yandex-metrika';
 import { 
   Brain, 
   Code, 
@@ -1413,6 +1413,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen relative text-slate-200 bg-slate-950 selection:bg-indigo-500 selection:text-white">
+      <YMInitializer accounts={[105825624]} options={{webvisor: true}} version="2" />
       {/* Ambient Background Blobs - Refined for "Haze" effect */}
       <div className="fixed inset-0 pointer-events-none -z-10">
         <div className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] bg-indigo-950/40 rounded-full blur-[120px]"></div>
