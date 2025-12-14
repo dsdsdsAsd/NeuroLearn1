@@ -1014,6 +1014,11 @@ const VideoModal = ({ videoSrc, onClose }) => {
 
 
 const App = () => {
+  useEffect(() => {
+    // This runs only on the client side, after the component mounts
+    inject();
+  }, []); // The empty dependency array ensures it runs only once
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -2394,9 +2399,6 @@ const App = () => {
     </div>
   );
 };
-
-// Vercel Analytics Initialization
-inject(); 
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
