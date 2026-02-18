@@ -1277,14 +1277,14 @@ const App = () => {
       title: "Машинное зрение: Алгоритмы детекции состояния растений",
       category: "Machine Learning / Development",
       desc: "Технический разбор создания нейросети для анализа здоровья культур.",
-      image: "/plants.png",
+      image: "/Humanoid_ai_agent_202602101834.jpeg",
       icon: <Leaf size={24} />
     },
     {
       title: "AI-Агроном: Масштабирование интеллекта на 1000 гектар",
       category: "AgriTech / Production",
       desc: "Кейс по внедрению автономного мониторинга посевов: от пилотного запуска до полного контроля огромных площадей.",
-      image: "/Futuristic_agricultural_drone_202602102314.jpeg",
+      image: "/Futuristic_drone_flying_202602101837.jpeg",
       icon: <Sprout size={24} />
     },
     {
