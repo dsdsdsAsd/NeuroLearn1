@@ -1950,14 +1950,14 @@ const App = () => {
               <div className="absolute -inset-4 bg-purple-500 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000 delay-100"></div>
 
               {/* Image with soft blending */}
-              <div className="relative rounded-full aspect-square overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_rgba(79,70,229,0.3)] transition-all duration-700 group-hover:scale-[1.03] group-hover:shadow-[0_0_80px_rgba(79,70,229,0.5)]">
+              <div className="relative rounded-full aspect-square overflow-hidden shadow-[0_0_50px_rgba(79,70,229,0.3)] transition-all duration-700 group-hover:scale-[1.03] group-hover:shadow-[0_0_80px_rgba(79,70,229,0.5)]">
                 <img
                   src="/mentor.png"
                   alt="Mentor"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-95 group-hover:opacity-100"
+                  className="w-full h-full object-cover scale-[1.02] transition-all duration-700 group-hover:scale-[1.05] opacity-95 group-hover:opacity-100"
                 />
-                {/* Subtle inner vignette to soften edges */}
-                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(15,23,42,0.5)]"></div>
+                {/* INSET MASK: Covers 1-2px of image edges to hide artifacts */}
+                <div className="absolute inset-0 rounded-full ring-[4px] ring-inset ring-slate-950/60 shadow-[inset_0_0_40px_rgba(15,23,42,0.9)]"></div>
               </div>
             </div>
             <div className="w-full md:w-2/3">
