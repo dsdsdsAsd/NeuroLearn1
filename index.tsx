@@ -1879,67 +1879,57 @@ const App = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Портфолио/Кейсы</h2>
-            <p className="text-slate-400">Проекты, которые вы сможете реализовать после курса</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Портфолио / Кейсы</h2>
+            <p className="text-slate-400">Реальные проекты, созданные нашими руками и руками наших студентов</p>
           </div>
 
-          {/* Carousel Container */}
-          <div className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden aspect-video group shadow-2xl border border-slate-800 bg-slate-900">
-            {/* Background Image */}
-            <img
-              src={aiSolutions[currentSolutionIndex].image}
-              alt={aiSolutions[currentSolutionIndex].title}
-              className={`w-full h-full object-cover transition-transform duration-700 ease-out opacity-80 ${[1, 3, 4].includes(currentSolutionIndex) ? 'scale-110' : 'group-hover:scale-105'
-                }`}
-            />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aiSolutions.map((solution, idx) => (
+              <div
+                key={idx}
+                className="group relative bg-slate-900/50 rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] flex flex-col"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
-            {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                      <Play size={20} fill="currentColor" className="text-slate-900 ml-1" />
+                    </div>
+                  </div>
 
-            {/* YouTube-like Play Button */}
-            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <Play size={32} fill="white" className="text-white ml-2" />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-cyan-400 border border-cyan-500/20 text-[10px] font-bold uppercase tracking-widest leading-none">
+                    {solution.icon}
+                    {solution.category}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                    {solution.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                    {solution.desc}
+                  </p>
+
+                  <button
+                    onClick={() => setIsDemoModalOpen(true)}
+                    className="w-fit flex items-center gap-2 text-cyan-400 text-sm font-bold group/btn hover:text-cyan-300 transition-colors"
+                  >
+                    Смотреть кейс
+                    <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                  </button>
+                </div>
               </div>
-            </div>
-
-            {/* Content Overlay */}
-            <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 z-20 flex flex-col justify-end">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider mb-3 w-fit">
-                {aiSolutions[currentSolutionIndex].icon}
-                {aiSolutions[currentSolutionIndex].category}
-              </div>
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight drop-shadow-md">
-                {aiSolutions[currentSolutionIndex].title}
-              </h3>
-              <p className="text-slate-300 text-base md:text-lg font-medium max-w-2xl drop-shadow-sm">
-                {aiSolutions[currentSolutionIndex].desc}
-              </p>
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSolution}
-              className="absolute top-1/2 left-4 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-cyan-500 hover:text-black transition-all backdrop-blur-sm border border-white/10 z-30"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSolution}
-              className="absolute top-1/2 right-4 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-cyan-500 hover:text-black transition-all backdrop-blur-sm border border-white/10 z-30"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Progress Indicators */}
-            <div className="absolute bottom-10 right-10 flex gap-2 z-30">
-              {aiSolutions.map((_, idx) => (
-                <div
-                  key={idx}
-                  className={`h-1.5 rounded-full transition-all duration-300 shadow-sm ${idx === currentSolutionIndex ? 'w-8 bg-cyan-500' : 'w-2 bg-white/40 hover:bg-white/60'}`}
-                ></div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1979,13 +1969,13 @@ const App = () => {
 
               <div className="space-y-4 text-slate-300 mb-8 leading-relaxed">
                 <p>
-                  Я — инженер-практик, который верит, что AI — это не магия, а мощный инструмент для решения реальных задач. Моя цель — не просто обучать модели, а строить полноценные, работающие системы, которые приносят измеримую пользу.
+                  Я — инженер-практик, который на реальном опыте знает, что AI — это не магия, а прикладной инструмент для кратного роста бизнеса и автоматизации. Моя цель — строить не просто «игрушки», а надежные, высоконагруженные системы, которые приносят измеримую прибыль и экономят сотни часов работы.
                 </p>
                 <p>
-                  Специализируюсь на создании комплексных решений, объединяя Computer Vision, работу с языковыми моделями (LLM, RAG) и разработку бэкенда (Python, API). В моем портфолио — проекты от анализа данных с дронов до создания автономных AI-агентов.
+                  Специализируюсь на проектировании сложной архитектуры: от автономных голосовых агентов до систем компьютерного зрения (CV) и корпоративных RAG-решений. Я объединяю возможности современных LLM с мощным бэкендом на Python, создавая продукты, которые работают стабильно.
                 </p>
                 <p>
-                  Я создал этот курс, чтобы делиться практическим опытом и учить системному подходу. Моя задача — помочь вам научиться не просто следовать инструкциям, а самостоятельно превращать любые идеи в работающие AI-продукты.
+                  Курс NeuroLearn — это живая практика без воды. Я передаю методологию и насмотренность, которые позволяют вам не просто копировать код, а самостоятельно проектировать и запускать любые AI-продукты «с нуля».
                 </p>
               </div>
 
@@ -2271,11 +2261,12 @@ const App = () => {
 
                 <div className="space-y-4 flex-grow">
                   {[
-                    "Всё из тарифа Наставничество",
-                    "Разработка архитектуры системы мною",
-                    "Полная реализация проекта 'под ключ'",
-                    "Глубокая интеграция в ваши процессы",
-                    "Приоритетная техническая поддержка"
+                    "Анализ бизнес-задач и аудит процессов",
+                    "Разработка архитектуры системы мною лично",
+                    "Полная техническая реализация 'под ключ'",
+                    "Интеграция в ваши CRM и API",
+                    "Настройка инфраструктуры и деплой",
+                    "30 дней приоритетной поддержки после запуска"
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
                       <CheckCircle size={18} className="text-indigo-400 flex-shrink-0" />
