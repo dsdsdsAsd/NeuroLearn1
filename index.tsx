@@ -1277,7 +1277,7 @@ const App = () => {
       title: "AI-Агроном: Масштабирование интеллекта на 1000 гектар",
       category: "AgriTech / Production",
       desc: "Кейс по внедрению автономного мониторинга посевов: от пилотного запуска до полного контроля огромных площадей.",
-      image: "https://img.youtube.com/vi/qeC-wwgOon4/maxresdefault.jpg",
+      image: "/Futuristic_agricultural_drone_202602102314.jpeg",
       icon: <Sprout size={24} />
     },
     {
