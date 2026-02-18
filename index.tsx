@@ -1954,10 +1954,10 @@ const App = () => {
                 <img
                   src="/mentor.png"
                   alt="Mentor"
-                  className="w-full h-full object-cover scale-[1.02] transition-all duration-700 group-hover:scale-[1.05] opacity-95 group-hover:opacity-100"
+                  className="w-full h-full object-cover scale-[1.05] transition-all duration-700 group-hover:scale-[1.08] opacity-95 group-hover:opacity-100"
                 />
-                {/* INSET MASK: Covers 1-2px of image edges to hide artifacts */}
-                <div className="absolute inset-0 rounded-full ring-[4px] ring-inset ring-slate-950/60 shadow-[inset_0_0_40px_rgba(15,23,42,0.9)]"></div>
+                {/* Subtle soft vignette (reverted from heavy ring) */}
+                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_25px_rgba(15,23,42,0.6)]"></div>
               </div>
             </div>
             <div className="w-full md:w-2/3">
