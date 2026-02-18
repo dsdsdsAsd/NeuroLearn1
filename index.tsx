@@ -1955,12 +1955,19 @@ const App = () => {
 
           <div className="glass-card bg-slate-800/30 rounded-3xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row gap-12 items-center shadow-lg">
             <div className="w-full md:w-1/3 relative group">
-              <div className="absolute inset-0 bg-indigo-500 rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
-              <img
-                src="/mentor.png"
-                alt="Mentor"
-                className="relative rounded-full w-full aspect-square object-cover border-4 border-indigo-500/20 transition-all duration-500 shadow-sm opacity-90 group-hover:opacity-100"
-              />
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-indigo-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+
+              {/* Image Container with smooth gradient border */}
+              <div className="relative p-1 rounded-full bg-gradient-to-br from-indigo-500/50 via-cyan-500/50 to-indigo-500/50 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                <div className="rounded-full overflow-hidden bg-slate-900 aspect-square border border-white/5">
+                  <img
+                    src="/mentor.png"
+                    alt="Mentor"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                  />
+                </div>
+              </div>
             </div>
             <div className="w-full md:w-2/3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-900/50 text-indigo-300 border border-indigo-500/30 text-base font-medium mb-6">
