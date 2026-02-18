@@ -1255,7 +1255,7 @@ const App = () => {
       title: "Мультиагентный RAG по книге",
       category: "Multi-Agent AI",
       desc: "ИИ-команда для глубокого анализа технической литературы и извлечения смыслов.",
-      image: "/book_case.jpg",
+      image: "/Image_202602012218.jpeg",
       icon: <Brain size={24} />
     },
     {
@@ -1266,9 +1266,9 @@ const App = () => {
       icon: <Database size={24} />
     },
     {
-      title: "Digital Landing & Branding",
+      title: "Разработка лендингов",
       category: "Web Development",
-      desc: "Разработка современных интерфейсов с нейро-графикой и плавной анимацией.",
+      desc: "Создание конверсионных страниц с нейро-графикой и плавной анимацией.",
       image: "https://img.youtube.com/vi/4ZoOxUvfDW8/maxresdefault.jpg",
       icon: <Layout size={24} />
     },
@@ -1287,9 +1287,9 @@ const App = () => {
       icon: <PenTool size={24} />
     },
     {
-      title: "Landing Page для TenChat",
+      title: "Лендинг для TenChat",
       category: "Web Design / Marketing",
-      desc: "Создание высококонверсионного лендинга с использованием нейросетей для генерации графики.",
+      desc: "Проектирование и запуск продающих лендингов с применением ИИ-инструментов.",
       image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
       icon: <Layout size={24} />
     },
