@@ -1252,9 +1252,9 @@ const App = () => {
 
   const aiSolutions = [
     {
-      title: "Мультиагентный RAG по книге",
-      category: "Multi-Agent AI",
-      desc: "ИИ-команда для глубокого анализа технической литературы и извлечения смыслов.",
+      title: "ИИ-Тьютор по материалам",
+      category: "AI Learning / RAG",
+      desc: "Интерактивное обучение на базе ваших книг и документов. ИИ строит программу, объясняет темы и проверяет знания.",
       image: "/Image_202602012218.jpeg",
       icon: <Brain size={24} />
     },
@@ -1266,9 +1266,9 @@ const App = () => {
       icon: <Database size={24} />
     },
     {
-      title: "Разработка лендингов",
+      title: "Лендинг для TenChat",
       category: "Web Development",
-      desc: "Создание конверсионных страниц с нейро-графикой и плавной анимацией.",
+      desc: "Разработка конверсионного лендинга с нейро-графикой и структурой, заточенной под продажи.",
       image: "https://img.youtube.com/vi/4ZoOxUvfDW8/maxresdefault.jpg",
       icon: <Layout size={24} />
     },
@@ -1287,9 +1287,9 @@ const App = () => {
       icon: <PenTool size={24} />
     },
     {
-      title: "Лендинг для TenChat",
-      category: "Web Design / Marketing",
-      desc: "Проектирование и запуск продающих лендингов с применением ИИ-инструментов.",
+      title: "AI-Web Design & Branding",
+      category: "Design / AI",
+      desc: "Создание уникального стиля и интерфейсов с использованием генеративного дизайна.",
       image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
       icon: <Layout size={24} />
     },
