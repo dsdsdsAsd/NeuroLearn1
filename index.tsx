@@ -1266,11 +1266,11 @@ const App = () => {
       icon: <Database size={24} />
     },
     {
-      title: "Голосовой AI-Ассистент 24/7",
-      category: "Voice AI",
-      desc: "Прием звонков и заказов без участия оператора.",
+      title: "Digital Landing & Branding",
+      category: "Web Development",
+      desc: "Разработка современных интерфейсов с нейро-графикой и плавной анимацией.",
       image: "https://img.youtube.com/vi/4ZoOxUvfDW8/maxresdefault.jpg",
-      icon: <Bot size={24} />
+      icon: <Layout size={24} />
     },
     {
       title: "AI-Агроном",
@@ -1287,11 +1287,11 @@ const App = () => {
       icon: <PenTool size={24} />
     },
     {
-      title: "Голосовой AI-агент",
-      category: "Voice AI / CRM",
-      desc: "Автоматический прием заказов и передача лидов в CRM-систему.",
+      title: "Landing Page для TenChat",
+      category: "Web Design / Marketing",
+      desc: "Создание высококонверсионного лендинга с использованием нейросетей для генерации графики.",
       image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
-      icon: <Bot size={24} />
+      icon: <Layout size={24} />
     },
     {
       title: "Нейроэксперт с Memory и RAG",
@@ -1887,13 +1887,13 @@ const App = () => {
             {aiSolutions.map((solution, idx) => (
               <div
                 key={idx}
-                className="group relative bg-slate-800/40 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-700 border-t-2 border-t-indigo-500/30 hover:border-indigo-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(79,70,229,0.15)] flex flex-col h-full"
+                className="group relative bg-slate-800/40 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-700 border-t-2 border-t-slate-400/40 hover:border-slate-300/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] flex flex-col h-full"
               >
                 {/* Top Highlight Line like in pricing */}
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Inset Glow like in pricing */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500 rounded-full opacity-0 blur-[60px] group-hover:opacity-10 transition-all duration-500 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full opacity-0 blur-[60px] group-hover:opacity-5 transition-all duration-500 pointer-events-none"></div>
 
                 {/* Image Container */}
                 <div className="relative aspect-video overflow-hidden m-2 rounded-2xl">
@@ -1911,7 +1911,7 @@ const App = () => {
                     </div>
                   </div>
 
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-indigo-300 border border-indigo-500/20 text-[10px] font-bold uppercase tracking-widest leading-none">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 border border-slate-700 text-[10px] font-bold uppercase tracking-widest leading-none">
                     {solution.icon}
                     {solution.category}
                   </div>
@@ -1919,7 +1919,7 @@ const App = () => {
 
                 {/* Content */}
                 <div className="relative z-10 p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-slate-200 transition-colors">
                     {solution.title}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
@@ -1928,7 +1928,7 @@ const App = () => {
 
                   <button
                     onClick={() => setIsDemoModalOpen(true)}
-                    className="w-full py-3 rounded-xl border border-slate-700 text-slate-300 text-sm font-bold group/btn hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-white transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-xl border border-slate-700 text-slate-300 text-sm font-bold group/btn hover:bg-white/5 hover:border-slate-400 hover:text-white transition-all flex items-center justify-center gap-2"
                   >
                     Смотреть кейс
                     <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
