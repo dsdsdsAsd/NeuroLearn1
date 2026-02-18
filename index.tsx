@@ -1252,11 +1252,11 @@ const App = () => {
 
   const aiSolutions = [
     {
-      title: "Практический разбор AI",
-      category: "Video Case",
-      desc: "Смотрите, как работают нейросети в реальных задачах.",
-      image: "https://img.youtube.com/vi/P-vJT2BHJmM/maxresdefault.jpg",
-      icon: <MonitorPlay size={24} />
+      title: "Мультиагентный RAG по книге",
+      category: "Multi-Agent AI",
+      desc: "ИИ-команда для глубокого анализа технической литературы и извлечения смыслов.",
+      image: "/book_case.jpg",
+      icon: <Brain size={24} />
     },
     {
       title: "Корпоративный RAG Чат-бот",
