@@ -2068,45 +2068,53 @@ const App = () => {
             <p className="text-slate-400">Что говорят студенты о курсе</p>
           </div>
 
-          <div className="glass-card bg-slate-800/30 rounded-3xl md:pl-10 border border-slate-700 flex flex-col md:flex-row gap-0 items-center shadow-lg relative overflow-hidden h-auto md:h-[360px]">
+          <div className="glass-card bg-slate-800/30 rounded-3xl md:pl-10 border border-slate-700 flex flex-col md:flex-row gap-0 items-center shadow-lg relative overflow-hidden h-auto md:h-[400px]">
             {/* Background Gradient/Blob */}
             <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
 
             {/* Content (Left) */}
-            <div className="w-full md:w-1/2 flex flex-col items-start relative z-10 p-6 md:py-0 md:pr-0 self-center">
+            <div className="w-full md:w-3/5 flex flex-col items-start relative z-10 p-6 md:p-10 self-center">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#86c232]/10 text-[#86c232] border border-[#86c232]/20 text-sm font-medium mb-3">
-                <Star size={16} fill="currentColor" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#86c232]/10 text-[#86c232] border border-[#86c232]/20 text-xs font-bold uppercase tracking-wider mb-4">
+                <Star size={14} fill="currentColor" />
                 Верифицировано KWORK
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Рейтинг и отзывы</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Рейтинг 5.0 и отзывы</h2>
 
-              <div className="space-y-4 text-slate-300 mb-6 leading-relaxed text-base md:text-lg">
+              <div className="space-y-4 text-slate-300 mb-6 leading-relaxed text-sm md:text-base">
                 <p>
-                  Все отзывы верифицированы независимой фриланс-биржей KWORK. 100% студентов довольны результатом.
+                  Чтобы стать AI-инженером в 2026 году, достаточно сменить подход: перестать учить теорию и сразу переходить к живой практике. 🚀
+                </p>
+                <p>
+                  За 1 месяц Вы научитесь создавать любую систему: от голосовых ассистентов до сложных RAG-решений. Мой подход позволяет передать знания максимально быстро, используя сам ИИ в качестве помощника по кодингу. 🏆
+                </p>
+                <p className="text-xs text-slate-400">
+                  Все отзывы верифицированы независимой фриланс-биржей KWORK. 💡 <b>Телеграм для связи: <a href="https://t.me/itbezcoda_dev" className="text-cyan-400 hover:underline">@itbezcoda_dev</a></b>
                 </p>
               </div>
 
-              <a
-                href="https://kwork.ru/user/alexandr15_02"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-[#86c232] hover:bg-[#618b25] text-slate-900 px-6 py-2.5 rounded-full font-bold text-base transition-all shadow-[0_4px_14px_rgba(134,194,50,0.3)] flex items-center gap-2 hover:scale-105 transform duration-200"
-              >
-                Читать на KWORK <ArrowRight size={18} />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a
+                  href="https://kwork.ru/user/alexandr15_02"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#86c232] hover:bg-[#618b25] text-slate-900 px-6 py-3 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(134,194,50,0.3)] flex items-center justify-center gap-2 hover:scale-105 transform duration-200"
+                >
+                  Читать на KWORK <ArrowRight size={18} />
+                </a>
+              </div>
             </div>
 
             {/* Image (Right) */}
-            <div className="w-full md:w-1/2 flex justify-center items-center relative z-10 h-full">
+            <div className="w-full md:w-2/5 flex justify-center items-center relative z-10 h-64 md:h-full overflow-hidden">
               {/* Green Glow behind image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/20 rounded-full blur-[80px] -z-10"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-green-500/10 rounded-full blur-[60px] -z-10"></div>
 
               <img
                 src="https://i.ibb.co/zWFMLDc1/Remove-background-project-3.png"
                 alt="Отзывы Kwork"
-                className="h-[240%] w-auto object-contain drop-shadow-[0_20px_50px_rgba(134,194,50,0.4)] md:-translate-x-10 md:translate-y-20"
+                className="h-[120%] md:h-[220%] w-auto object-contain drop-shadow-[0_20px_50px_rgba(134,194,50,0.4)] transition-transform duration-700 md:-translate-x-8 md:translate-y-16"
               />
             </div>
           </div>
