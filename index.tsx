@@ -1900,12 +1900,12 @@ const App = () => {
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                      <Play size={20} fill="currentColor" className="text-slate-900 ml-1" />
+                    <div className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-lg">
+                      <Play size={20} fill="white" className="text-white ml-1" />
                     </div>
                   </div>
 
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-cyan-400 border border-cyan-500/20 text-[10px] font-bold uppercase tracking-widest leading-none">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-indigo-300 border border-indigo-500/20 text-[10px] font-bold uppercase tracking-widest leading-none">
                     {solution.icon}
                     {solution.category}
                   </div>
@@ -1913,7 +1913,7 @@ const App = () => {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
                     {solution.title}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -1922,7 +1922,7 @@ const App = () => {
 
                   <button
                     onClick={() => setIsDemoModalOpen(true)}
-                    className="w-fit flex items-center gap-2 text-cyan-400 text-sm font-bold group/btn hover:text-cyan-300 transition-colors"
+                    className="w-fit flex items-center gap-2 text-slate-300 text-sm font-bold group/btn hover:text-white transition-colors"
                   >
                     Смотреть кейс
                     <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
@@ -1945,18 +1945,19 @@ const App = () => {
 
           <div className="glass-card bg-slate-800/30 rounded-3xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row gap-12 items-center shadow-lg">
             <div className="w-full md:w-1/3 relative group">
-              {/* Background Glow */}
-              <div className="absolute inset-0 bg-indigo-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+              {/* Massive Soft Background Glow */}
+              <div className="absolute -inset-4 bg-indigo-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity duration-1000"></div>
+              <div className="absolute -inset-4 bg-purple-500 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000 delay-100"></div>
 
-              {/* Image Container with smooth gradient border */}
-              <div className="relative p-1 rounded-full bg-gradient-to-br from-indigo-600/60 via-purple-500/40 to-indigo-600/60 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="rounded-full overflow-hidden bg-slate-900 aspect-square border border-white/5">
-                  <img
-                    src="/mentor.png"
-                    alt="Mentor"
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                  />
-                </div>
+              {/* Image with soft blending */}
+              <div className="relative rounded-full aspect-square overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_rgba(79,70,229,0.3)] transition-all duration-700 group-hover:scale-[1.03] group-hover:shadow-[0_0_80px_rgba(79,70,229,0.5)]">
+                <img
+                  src="/mentor.png"
+                  alt="Mentor"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-95 group-hover:opacity-100"
+                />
+                {/* Subtle inner vignette to soften edges */}
+                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(15,23,42,0.5)]"></div>
               </div>
             </div>
             <div className="w-full md:w-2/3">
