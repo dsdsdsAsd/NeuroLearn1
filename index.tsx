@@ -1252,7 +1252,7 @@ const App = () => {
 
   const aiSolutions = [
     {
-      title: "ИИ-Тьютор по материалам",
+      title: "Мультимодальный RAG по книге",
       category: "AI Learning / RAG",
       desc: "Интерактивное обучение на базе ваших книг и документов. ИИ строит программу, объясняет темы и проверяет знания.",
       image: "/book.jpeg",
@@ -1287,10 +1287,10 @@ const App = () => {
       icon: <PenTool size={24} />
     },
     {
-      title: "AI-Web Design & Branding",
+      title: "Лендинг Тенчат",
       category: "Design / AI",
-      desc: "Создание уникального стиля и интерфейсов с использованием генеративного дизайна.",
-      image: "https://img.youtube.com/vi/J-l1GPAuFYw/maxresdefault.jpg",
+      desc: "Создание высококонверсионного лендинга с использованием ИИ для генерации графики и смысловой структуры.",
+      image: "https://img.youtube.com/vi/VD0c8S_evF4/maxresdefault.jpg",
       icon: <Layout size={24} />
     },
     {
