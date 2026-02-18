@@ -1949,7 +1949,7 @@ const App = () => {
               <div className="absolute inset-0 bg-indigo-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
 
               {/* Image Container with smooth gradient border */}
-              <div className="relative p-1 rounded-full bg-gradient-to-br from-indigo-500/50 via-cyan-500/50 to-indigo-500/50 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <div className="relative p-1 rounded-full bg-gradient-to-br from-indigo-600/60 via-purple-500/40 to-indigo-600/60 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
                 <div className="rounded-full overflow-hidden bg-slate-900 aspect-square border border-white/5">
                   <img
                     src="/mentor.png"
