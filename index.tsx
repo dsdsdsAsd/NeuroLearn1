@@ -1955,11 +1955,11 @@ const App = () => {
 
           <div className="glass-card bg-slate-800/30 rounded-3xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row gap-12 items-center shadow-lg">
             <div className="w-full md:w-1/3 relative group">
-              <div className="absolute inset-0 bg-indigo-500 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <div className="absolute inset-0 bg-indigo-500 rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
               <img
-                src="./mentor.png"
+                src="/mentor.png"
                 alt="Mentor"
-                className="relative rounded-2xl w-full aspect-[3/4] object-cover transition-all duration-500 shadow-sm opacity-90 group-hover:opacity-100"
+                className="relative rounded-full w-full aspect-square object-cover border-4 border-indigo-500/20 transition-all duration-500 shadow-sm opacity-90 group-hover:opacity-100"
               />
             </div>
             <div className="w-full md:w-2/3">
@@ -2158,15 +2158,13 @@ const App = () => {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             {/* 1. Researcher Plan */}
             <div className="group relative p-8 rounded-3xl border border-slate-700 border-t-4 border-t-slate-600 bg-slate-800/40 backdrop-blur-md shadow-lg flex flex-col h-full overflow-hidden hover:border-slate-500 transition-all duration-500">
-              {/* Top Highlight Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              {/* Central Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-slate-500 rounded-full opacity-5 blur-[80px] group-hover:opacity-15 transition-all duration-500 pointer-events-none"></div>
 
               <div className="relative z-10 flex flex-col h-full">
                 <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide">БАЗОВЫЙ</h3>
                 <p className="text-slate-400 text-sm mb-6 min-h-[40px]">
-                  Доступ к знаниям и периодическая поддержка в чате.
+                  Доступ к знаниям и 3 созвона в неделю для быстрой сверки.
                 </p>
 
                 <div className="mb-8">
@@ -2177,7 +2175,7 @@ const App = () => {
                   {[
                     "Полный доступ к базе знаний (навсегда)",
                     "Доступ в закрытое комьюнити",
-                    "Периодическая помощь от наставника",
+                    "3 созвона в неделю (групповые)",
                     "Обновления материалов"
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
@@ -2213,7 +2211,7 @@ const App = () => {
                 <div className="relative z-10 flex flex-col h-full">
                   <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide text-cyan-400">НАСТАВНИЧЕСТВО</h3>
                   <p className="text-slate-300 text-sm mb-6 min-h-[40px]">
-                    Тотальная обратная связь и работа на результат в личном сопровождении.
+                    Тотальная обратная связь 24/7 и индивидуальная работа на результат.
                   </p>
 
                   <div className="mb-8">
@@ -2225,7 +2223,7 @@ const App = () => {
                       "Всё из Базового тарифа",
                       "Личная проверка заданий и код-ревью",
                       "Тотальная обратная связь в чате 24/7",
-                      "Еженедельные индивидуальные созвоны",
+                      "Индивидуальные созвоны без ограничений",
                       "Полное сопровождение до готового проекта"
                     ].map((feat, i) => (
                       <div key={i} className="flex gap-3 text-slate-200 text-sm font-medium">
@@ -2251,9 +2249,7 @@ const App = () => {
 
             {/* 3. Architect Plan */}
             <div className="group relative p-8 rounded-3xl border border-slate-700 border-t-4 border-t-indigo-500 bg-slate-800/40 backdrop-blur-md shadow-lg flex flex-col h-full overflow-hidden hover:border-indigo-500 transition-all duration-500">
-              {/* Top Highlight Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              {/* Central Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500 rounded-full opacity-5 blur-[80px] group-hover:opacity-15 transition-all duration-500 pointer-events-none"></div>
 
               <div className="relative z-10 flex flex-col h-full">
@@ -2323,8 +2319,6 @@ const App = () => {
           </div>
         </div>
       </section>
-
-
 
       {isDemoModalOpen && <VideoModal videoSrc="https://kinescope.io/embed/v2LnV421115e1VfdQxMJ59" onClose={() => setIsDemoModalOpen(false)} />}
     </div>
