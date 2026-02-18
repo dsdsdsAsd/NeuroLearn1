@@ -62,7 +62,8 @@ import {
   Settings,
   Cloud,
   HardDrive,
-  Check
+  Check,
+  Leaf
 } from "lucide-react";
 
 // --- CONFIGURATION: HARDCODED CREDENTIALS (OPTIONAL) ---
@@ -1280,13 +1281,6 @@ const App = () => {
       icon: <Sprout size={24} />
     },
     {
-      title: "AI Контент-Завод",
-      category: "Generative AI / MLOps",
-      desc: "Генерация статей (DeepSeek) и обложек (Flux) для маркетинга.",
-      image: "https://img.youtube.com/vi/Lh8Ghj5ftCQ/maxresdefault.jpg",
-      icon: <PenTool size={24} />
-    },
-    {
       title: "Лендинг Тенчат",
       category: "Design / AI",
       desc: "Создание высококонверсионного лендинга с использованием ИИ для генерации графики и смысловой структуры.",
@@ -1294,11 +1288,18 @@ const App = () => {
       icon: <Layout size={24} />
     },
     {
-      title: "Нейроэксперт с Memory и RAG",
-      category: "AI-Ассистенты / RAG",
-      desc: "AI-ассистент, способный вести осмысленный диалог, запоминать контекст и отвечать на вопросы, используя обширную базу знаний.",
-      image: "https://img.youtube.com/vi/8QXeMnMvfdI/maxresdefault.jpg",
-      icon: <Brain size={24} />
+      title: "AI Контент-Завод",
+      category: "Generative AI / MLOps",
+      desc: "Генерация комплектов маркетинговых материалов: статьи, креативы и стратегии.",
+      image: "https://img.youtube.com/vi/Lh8Ghj5ftCQ/maxresdefault.jpg",
+      icon: <PenTool size={24} />
+    },
+    {
+      title: "AI-Зрение: Анализ растений",
+      category: "Computer Vision / ML",
+      desc: "Обучение нейросети для автоматического определения видов и состояния растений по фотографии.",
+      image: "/plants.jpg",
+      icon: <Leaf size={24} />
     },
     {
       title: "ИИ-Аналитик для ваших Таблиц",
