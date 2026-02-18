@@ -1255,7 +1255,7 @@ const App = () => {
       title: "ИИ-Тьютор по материалам",
       category: "AI Learning / RAG",
       desc: "Интерактивное обучение на базе ваших книг и документов. ИИ строит программу, объясняет темы и проверяет знания.",
-      image: "/Image_202602012218.jpeg",
+      image: "/book.jpeg",
       icon: <Brain size={24} />
     },
     {
@@ -1266,11 +1266,11 @@ const App = () => {
       icon: <Database size={24} />
     },
     {
-      title: "Лендинг для TenChat",
-      category: "Web Development",
-      desc: "Разработка конверсионного лендинга с нейро-графикой и структурой, заточенной под продажи.",
+      title: "Голосовой AI-Ассистент 24/7",
+      category: "Voice AI",
+      desc: "Прием звонков и заказов без участия оператора.",
       image: "https://img.youtube.com/vi/4ZoOxUvfDW8/maxresdefault.jpg",
-      icon: <Layout size={24} />
+      icon: <Bot size={24} />
     },
     {
       title: "AI-Агроном",
@@ -1950,7 +1950,7 @@ const App = () => {
           </div>
 
           <div className="glass-card bg-slate-800/30 rounded-3xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row gap-12 items-center shadow-lg">
-            <div className="w-full md:w-1/3 relative group">
+            <div className="w-full max-w-[280px] md:w-1/4 relative group">
               {/* Massive Soft Background Glow */}
               <div className="absolute -inset-4 bg-indigo-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity duration-1000"></div>
               <div className="absolute -inset-4 bg-purple-500 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000 delay-100"></div>
