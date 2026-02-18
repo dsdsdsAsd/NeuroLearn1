@@ -1290,7 +1290,7 @@ const App = () => {
       title: "Лендинг Тенчат",
       category: "Design / AI",
       desc: "Создание высококонверсионного лендинга с использованием ИИ для генерации графики и смысловой структуры.",
-      image: "https://img.youtube.com/vi/VD0c8S_evF4/maxresdefault.jpg",
+      image: "/tensender.png",
       icon: <Layout size={24} />
     },
     {
