@@ -2073,24 +2073,18 @@ const App = () => {
             <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
 
             {/* Content (Left) */}
-            <div className="w-full md:w-3/5 flex flex-col items-start relative z-10 p-6 md:p-10 self-center">
+            <div className="w-full md:w-1/2 flex flex-col items-start relative z-10 p-6 md:p-10 self-center">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#86c232]/10 text-[#86c232] border border-[#86c232]/20 text-xs font-bold uppercase tracking-wider mb-4">
                 <Star size={14} fill="currentColor" />
                 Верифицировано KWORK
               </div>
 
-              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Рейтинг 5.0 и отзывы</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Рейтинг 5.0 и отзывы</h2>
 
-              <div className="space-y-4 text-slate-300 mb-6 leading-relaxed text-sm md:text-base">
+              <div className="space-y-4 text-slate-300 mb-8 leading-relaxed text-base">
                 <p>
-                  Чтобы стать AI-инженером в 2026 году, достаточно сменить подход: перестать учить теорию и сразу переходить к живой практике. 🚀
-                </p>
-                <p>
-                  За 1 месяц Вы научитесь создавать любую систему: от голосовых ассистентов до сложных RAG-решений. Мой подход позволяет передать знания максимально быстро, используя сам ИИ в качестве помощника по кодингу. 🏆
-                </p>
-                <p className="text-xs text-slate-400">
-                  Все отзывы верифицированы независимой фриланс-биржей KWORK. 💡 <b>Телеграм для связи: <a href="https://t.me/itbezcoda_dev" className="text-cyan-400 hover:underline">@itbezcoda_dev</a></b>
+                  Все отзывы и оценки верифицированы независимой фриланс-биржей KWORK. 100% студентов и заказчиков довольны результатом работы.
                 </p>
               </div>
 
@@ -2099,7 +2093,7 @@ const App = () => {
                   href="https://kwork.ru/user/alexandr15_02"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#86c232] hover:bg-[#618b25] text-slate-900 px-6 py-3 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(134,194,50,0.3)] flex items-center justify-center gap-2 hover:scale-105 transform duration-200"
+                  className="bg-[#86c232] hover:bg-[#618b25] text-slate-900 px-8 py-3 rounded-full font-bold text-base transition-all shadow-[0_4px_14px_rgba(134,194,50,0.3)] flex items-center justify-center gap-2 hover:scale-105 transform duration-200"
                 >
                   Читать на KWORK <ArrowRight size={18} />
                 </a>
