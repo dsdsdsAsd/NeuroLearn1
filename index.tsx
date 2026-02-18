@@ -1274,16 +1274,16 @@ const App = () => {
       icon: <Bot size={24} />
     },
     {
-      title: "AI-Агроном",
-      category: "Computer Vision / AgriTech",
-      desc: "Анализ растений по видео с дронов.",
+      title: "AI-Агроном: Внедрение",
+      category: "AgriTech / Production",
+      desc: "Практическое применение в полях: мониторинг урожая с помощью дронов и аналитика в реальном времени.",
       image: "https://img.youtube.com/vi/qeC-wwgOon4/maxresdefault.jpg",
       icon: <Sprout size={24} />
     },
     {
-      title: "AI-Зрение: Анализ растений",
-      category: "Computer Vision / ML",
-      desc: "Обучение нейросети для автоматического определения видов и состояния растений по фотографии.",
+      title: "AI-Обучение: Компьютерное зрение",
+      category: "Machine Learning / Development",
+      desc: "Кейс по созданию и обучению нейросети: от сбора датасета до уверенного распознавания видов растений.",
       image: "/plants.png",
       icon: <Leaf size={24} />
     },
