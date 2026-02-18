@@ -1887,16 +1887,22 @@ const App = () => {
             {aiSolutions.map((solution, idx) => (
               <div
                 key={idx}
-                className="group relative bg-slate-900/50 rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] flex flex-col"
+                className="group relative bg-slate-800/40 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-700 border-t-2 border-t-indigo-500/30 hover:border-indigo-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(79,70,229,0.15)] flex flex-col h-full"
               >
+                {/* Top Highlight Line like in pricing */}
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Inset Glow like in pricing */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500 rounded-full opacity-0 blur-[60px] group-hover:opacity-10 transition-all duration-500 pointer-events-none"></div>
+
                 {/* Image Container */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden m-2 rounded-2xl">
                   <img
                     src={solution.image}
                     alt={solution.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -1912,17 +1918,17 @@ const App = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="relative z-10 p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
                     {solution.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
                     {solution.desc}
                   </p>
 
                   <button
                     onClick={() => setIsDemoModalOpen(true)}
-                    className="w-fit flex items-center gap-2 text-slate-300 text-sm font-bold group/btn hover:text-white transition-colors"
+                    className="w-full py-3 rounded-xl border border-slate-700 text-slate-300 text-sm font-bold group/btn hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-white transition-all flex items-center justify-center gap-2"
                   >
                     Смотреть кейс
                     <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
