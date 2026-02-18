@@ -2162,26 +2162,23 @@ const App = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               {/* Central Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-slate-500 rounded-full opacity-5 blur-[80px] group-hover:opacity-15 transition-all duration-500 pointer-events-none"></div>
-              {/* Bottom Gradient Glow */}
-              <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-slate-500/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide">ИССЛЕДОВАТЕЛЬ</h3>
+                <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide">БАЗОВЫЙ</h3>
                 <p className="text-slate-400 text-sm mb-6 min-h-[40px]">
-                  Для самостоятельных энтузиастов, которым нужна система.
+                  Доступ к знаниям и периодическая поддержка в чате.
                 </p>
 
                 <div className="mb-8">
                   <div className="text-4xl font-bold text-white mb-1">49 900 ₽</div>
-
                 </div>
 
                 <div className="space-y-4 flex-grow">
                   {[
-                    "Полный доступ к урокам (навсегда)",
+                    "Полный доступ к базе знаний (навсегда)",
                     "Доступ в закрытое комьюнити",
-                    "Практические задания (авто-проверка)",
-
+                    "Периодическая помощь от наставника",
+                    "Обновления материалов"
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
                       <CheckCircle size={18} className="text-slate-500 flex-shrink-0" />
@@ -2191,57 +2188,45 @@ const App = () => {
                 </div>
 
                 <a
-                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Исследователь'."
+                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20Базовый%20тариф."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full"
+                  className="w-full mt-8"
                 >
-                  <a
-                    href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Исследователь'."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
-                    <button className="w-full py-4 rounded-xl border border-slate-600 text-white font-bold hover:bg-slate-700 hover:border-slate-500 transition-all mt-8">
-                      Выбрать 'Исследователя'
-                    </button>
-                  </a>                </a>
+                  <button className="w-full py-4 rounded-xl border border-slate-600 text-white font-bold hover:bg-slate-700 hover:border-slate-500 transition-all">
+                    Выбрать Базовый
+                  </button>
+                </a>
               </div>
             </div>
 
             {/* 2. Practitioner Plan (Popular) */}
             <div className="relative transform md:-translate-y-4">
-              {/* Badge outside overflow hidden */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-900 px-4 py-1 rounded-full text-sm font-bold shadow-lg z-20">
                 Самый популярный
               </div>
 
               <div className="group relative p-8 rounded-3xl border border-cyan-500/50 border-t-4 border-t-cyan-500 bg-slate-800/40 backdrop-blur-md shadow-[0_0_30px_rgba(6,182,212,0.15)] flex flex-col h-full overflow-hidden hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] transition-all duration-500">
-
-                {/* Top Highlight Line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                {/* Central Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full opacity-10 blur-[80px] group-hover:opacity-20 transition-all duration-500 pointer-events-none"></div>
-                {/* Bottom Gradient Glow */}
-                <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-cyan-500/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide text-cyan-400">ПРАКТИК</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide text-cyan-400">НАСТАВНИЧЕСТВО</h3>
                   <p className="text-slate-300 text-sm mb-6 min-h-[40px]">
-                    Для тех, кто хочет дойти до результата с поддержкой наставника.
+                    Тотальная обратная связь и работа на результат в личном сопровождении.
                   </p>
 
                   <div className="mb-8">
                     <div className="text-4xl font-bold text-white mb-1">99 900 ₽</div>
-
                   </div>
 
                   <div className="space-y-4 flex-grow">
                     {[
-                      "Все из тарифа 'Исследователь'",
-                      "Личная проверка ДЗ и код-ревью",
-                      "Еженедельные воркшопы (Q&A)",
-                      "Помощь в реализации вашего проекта"
+                      "Всё из Базового тарифа",
+                      "Личная проверка заданий и код-ревью",
+                      "Тотальная обратная связь в чате 24/7",
+                      "Еженедельные индивидуальные созвоны",
+                      "Полное сопровождение до готового проекта"
                     ].map((feat, i) => (
                       <div key={i} className="flex gap-3 text-slate-200 text-sm font-medium">
                         <CheckCircle size={18} className="text-cyan-400 flex-shrink-0" />
@@ -2251,21 +2236,15 @@ const App = () => {
                   </div>
 
                   <a
-                    href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Практик'."
+                    href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20Наставничество."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full"
+                    className="w-full mt-8"
                   >
-                    <a
-                      href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Практик'."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full"
-                    >
-                      <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25 transition-all mt-8">
-                        Выбрать 'Практика'
-                      </button>
-                    </a>                    </a>
+                    <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25 transition-all">
+                      Выбрать Наставничество
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -2276,27 +2255,24 @@ const App = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               {/* Central Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500 rounded-full opacity-5 blur-[80px] group-hover:opacity-15 transition-all duration-500 pointer-events-none"></div>
-              {/* Bottom Gradient Glow */}
-              <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-indigo-500/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide text-indigo-400">АРХИТЕКТОР</h3>
+                <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wide text-indigo-400">ПОД КЛЮЧ</h3>
                 <p className="text-slate-400 text-sm mb-6 min-h-[40px]">
-                  Персональное наставничество и создание проекта "под ключ".
+                  Разработка сложной ИИ-системы моими руками под Ваши задачи.
                 </p>
 
                 <div className="mb-8">
-                  <div className="text-4xl font-bold text-white mb-1">249 900 ₽</div>
-
+                  <div className="text-4xl font-bold text-white mb-1">149 900 ₽</div>
                 </div>
 
                 <div className="space-y-4 flex-grow">
                   {[
-                    "Все из тарифа 'Практик'",
-                    "4 индивидуальные страт-сессии",
-                    "Разработка архитектуры MVP",
-                    "Применение корпоративных стандартов и методологий",
-                    "Приоритетная поддержка"
+                    "Всё из тарифа Наставничество",
+                    "Разработка архитектуры системы мною",
+                    "Полная реализация проекта 'под ключ'",
+                    "Глубокая интеграция в ваши процессы",
+                    "Приоритетная техническая поддержка"
                   ].map((feat, i) => (
                     <div key={i} className="flex gap-3 text-slate-300 text-sm">
                       <CheckCircle size={18} className="text-indigo-400 flex-shrink-0" />
@@ -2306,12 +2282,12 @@ const App = () => {
                 </div>
 
                 <a
-                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Архитектор'."
+                  href="https://t.me/itbezcoda_dev?text=Здравствуйте%2C%20меня%20интересует%20тариф%20'Под%20ключ'."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full"
+                  className="w-full mt-8"
                 >
-                  <button className="w-full py-4 rounded-xl border border-indigo-500/50 text-indigo-300 font-bold hover:bg-indigo-900/30 hover:text-indigo-200 transition-all mt-8">
+                  <button className="w-full py-4 rounded-xl border border-indigo-500/50 text-indigo-300 font-bold hover:bg-indigo-900/30 hover:text-indigo-200 transition-all">
                     Оставить заявку
                   </button>
                 </a>
