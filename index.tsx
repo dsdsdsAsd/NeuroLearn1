@@ -1927,13 +1927,15 @@ const App = () => {
                     {solution.desc}
                   </p>
 
-                  <button
-                    onClick={() => setIsDemoModalOpen(true)}
-                    className="w-full py-3 rounded-xl border border-slate-700 text-slate-300 text-sm font-bold group/btn hover:bg-white/5 hover:border-slate-400 hover:text-white transition-all flex items-center justify-center gap-2"
+                  <a
+                    href="https://www.youtube.com/@itbezcoda/videos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-xl border border-slate-700 text-slate-300 text-sm font-bold group/btn hover:bg-white/5 hover:border-slate-400 hover:text-white transition-all flex items-center justify-center gap-2 text-center"
                   >
                     Смотреть кейс
                     <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
