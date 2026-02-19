@@ -1378,7 +1378,7 @@ const App = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => navigateTo('home')}>
             <Brain className="text-cyan-400" size={32} />
@@ -1881,7 +1881,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Портфолио / Кейсы</h2>
-            <p className="text-slate-400">Реальные проекты, созданные нашими руками и руками наших студентов</p>
+            <p className="text-slate-400">Реальные проекты, созданные нашими руками</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
