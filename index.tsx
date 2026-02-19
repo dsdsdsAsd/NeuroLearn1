@@ -1143,9 +1143,10 @@ const App = () => {
   // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      // Use smaller threshold for smoother trigger at the top
+      setScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -1378,7 +1379,7 @@ const App = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav py-4 shadow-sm" : "py-6 bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-slate-950/80 backdrop-blur-md py-4 border-b border-white/10 shadow-lg" : "bg-transparent py-6 border-b border-transparent shadow-none"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white cursor-pointer" onClick={() => navigateTo('home')}>
             <Brain className="text-cyan-400" size={32} />
